@@ -1,10 +1,20 @@
 
+if exists("b:did_indent")
+  finish
+endif
+let b:did_indent = 1
+
 setlocal nolisp
 setlocal autoindent
-setlocal indentexpr=GetFloriIndent()
+setlocal indentexpr=FloriIndent()
 setlocal indentkeys+=<:>,0=},0=)
 
-function! GetFloriIndent()
+if exists("*FloriIndent")
+  finish
+endif
+
+function! FloriIndent()
+  echo "VIM FLORI!"
   let pnum = prevnoblank(v:lnum - 1)
   if pnum == 0
     return 0
@@ -24,3 +34,4 @@ function! GetFloriIndent()
   endif
   return ind
 endfunction
+
