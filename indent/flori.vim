@@ -14,7 +14,7 @@ if exists("*FloriIndent")
 endif
 
 function! FloriIndent()
-  let pnum = prevnoblank(v:lnum - 1)
+  let pnum = prevnonblank(v:lnum - 1)
   if pnum == 0
     return 0
   endif
