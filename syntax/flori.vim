@@ -2,8 +2,11 @@ if exists("b:current_syntax")
   finish
 endif
 
-syntax region floriLineComment start=+#+ end=+$+
+syn region floriLineComment start=+#+ end=+$+
 hi def link floriLineComment Comment
+
+syn region floriParen start='(' end=')' transparent
+syn region floriBlock start="{" end="}" transparent fold
 
 " string
 syn region floriString start=+"+ skip=+\\\\\|\\"+ end=+"+
