@@ -14,7 +14,6 @@ if exists("*FloriIndent")
 endif
 
 function! FloriIndent()
-  echo "VIM FLORI!"
   let pnum = prevnoblank(v:lnum - 1)
   if pnum == 0
     return 0
